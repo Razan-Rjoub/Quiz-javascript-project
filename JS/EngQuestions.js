@@ -110,7 +110,6 @@ function ClickBtnChoice(choice, clickedElement) {
 var temp = sessionStorage.getItem('index') ? parseInt(sessionStorage.getItem('index')) : 0;
 var index = temp;
 function nextqus() {
-
     ++index;
     ++temp;
     sessionStorage.setItem("index", temp);

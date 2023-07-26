@@ -123,7 +123,6 @@ function grade() {
     http.onload = function () {
         var grades = JSON.parse(this.responseText);
         var arrgradeeng = JSON.parse(localStorage.getItem('answers'));
-
         var arrgradeIQ = JSON.parse(localStorage.getItem('answersIQ'));
         for (let i = 0; i < grades.length; i++) {
             for (let j = 0; j < arrgradeeng.length; j++) {

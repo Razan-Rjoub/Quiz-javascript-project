@@ -22,7 +22,6 @@ function checkin() {
     }}
     else{
         window.location.href='../pages/regestration.html'
-        console.log('.................')
     }
 
 
@@ -30,13 +29,17 @@ function checkin() {
 
 
 var log = document.getElementById('login')
+var sign=document.getElementById('regestrationbtn')
 function login() {
     var name = localStorage.getItem('name');
     if (name!=null) {
         log.innerHTML = 'Log out';
         log.href='../pages/login.html'
+        sign.innerHTML=''
+        log.style.fontSize='25px'
 
     }
+
 
 }
 window.onload=login
@@ -51,4 +54,5 @@ function tologin() {
 }
 function toSign(){
     window.location.href='../pages/regestration.html' 
+
 }
