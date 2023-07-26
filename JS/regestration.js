@@ -19,7 +19,7 @@ form.addEventListener('submit', function (event) {
   event.preventDefault(); 
   const isFormValid = validateForm();
   if (isFormValid) {
-    savedata(); 
+    
     window.location.href="../pages/login.html";
   }
 });

@@ -30,12 +30,12 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log(storedanswer);
 });
 function loadQuestion(index) {
-    
+
     http.open("GET", "../JSON.json");
     http.onload = function () {
         questions = JSON.parse(this.responseText);
         var divcontainer = document.getElementsByClassName("container")[0];
-        var question = `<h2 class="qustiontext">${questions[index].id-5}- ${questions[index].Q
+        var question = `<h2 class="qustiontext">${questions[index].id - 5}- ${questions[index].Q
             }</h2>
         <div onclick="ClickBtnChoice(0,this)" class="Choices"><span class="Letter"> A </span> <span class="Question">${questions[index].awr1
             }</span></div>
@@ -59,11 +59,11 @@ function ClickBtnChoice(choice, clickedElement) {
         choices[i].style.border = '3px solid white';
     }
     for (let i = 0; i < AnswersIQ.length; i++) {
-        if (AnswersIQ[i] == questions[index].awr2 ||AnswersIQ[i] == questions[index].awr3||AnswersIQ[i] == questions[index].awr1) {
+        if (AnswersIQ[i] == questions[index].awr2 || AnswersIQ[i] == questions[index].awr3 || AnswersIQ[i] == questions[index].awr1) {
             AnswersIQ.pop();
         }
     }
-    if (index >=5&&index<9) {
+    if (index >= 5 && index < 9) {
         console.log(index)
         if (choice == '0') {
             clickedElement.style.border = '6px solid rgb(6, 211, 242)';
@@ -84,35 +84,35 @@ function ClickBtnChoice(choice, clickedElement) {
 
     }
 
-    if (index ==9) {
-        if(choice=='0'){
+    if (index == 9) {
+        if (choice == '0') {
             clickedElement.style.border = '6px solid rgb(6, 211, 242)';
             AnswersIQ.push(questions[index].awr1)
-        next.style.display = "inline";
-        next.innerHTML = "submit";
+            next.style.display = "inline";
+            next.innerHTML = "submit";
         }
-        if(choice=='1'){
+        if (choice == '1') {
             clickedElement.style.border = '6px solid rgb(6, 211, 242)';
             AnswersIQ.push(questions[index].awr2)
             next.style.display = "inline";
             next.innerHTML = "submit";
+        }
+        if (choice == '2') {
+            clickedElement.style.border = '6px solid rgb(6, 211, 242)';
+            AnswersIQ.push(questions[index].awr3)
+            next.style.display = "inline";
+            next.innerHTML = "submit";
+            if (questions[index].awr3 == questions[index].true)
+                ++grade;
+            else {
+                ++gradewrong;
             }
-            if(choice=='2'){
-                clickedElement.style.border = '6px solid rgb(6, 211, 242)';
-                AnswersIQ.push(questions[index].awr3)  
-                next.style.display = "inline";
-                next.innerHTML = "submit";
-                if (questions[index].awr3 == questions[index].true)
-                    ++grade;
-                    else{
-                        ++gradewrong;
-                    }
-              
-                }
+
+        }
     }
 }
 var temp = sessionStorage.getItem('indexIQ') ? parseInt(sessionStorage.getItem('indexIQ')) : 5;
-var index=temp;
+var index = temp;
 function nextqus() {
     ++index;
     ++temp;
