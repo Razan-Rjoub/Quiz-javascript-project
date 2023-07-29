@@ -90,16 +90,17 @@ x.onload = function () {
 
         if (myobj[i].awr1 == myobj[i].true) {
             li1.classList.add("correct1")
-        } else { li1.classList.add("uncorrect") }
+        } 
+        
 
 
         if (myobj[i].awr2 == myobj[i].true) {
             li2.classList.add("correct1")
-        } else { li2.classList.add("uncorrect") }
+        } 
 
         if (myobj[i].awr3 == myobj[i].true) {
             li3.classList.add("correct1")
-        } else { li3.classList.add("uncorrect") }
+        } 
 
 
         let answer = document.createTextNode("Your Answer");
@@ -107,15 +108,33 @@ x.onload = function () {
         span.classList.add("answer");
         span.appendChild(answer);
 
-        if (myArray[i] == myobj[i].awr1) {
+        if (myArray[i] == myobj[i].awr1 &&myArray[i] == myobj[i].true ) {
             li1.appendChild(span)
-        } else if (myArray[i] == myobj[i].awr2) {
+            li1.classList.add("correct1")
+
+        } else if (myArray[i] == myobj[i].awr1 &&myArray[i] != myobj[i].true) {
+            li1.appendChild(span)
+            li1.classList.add("uncorrect")
+        } else if (myArray[i] == myobj[i].awr2 &&myArray[i] == myobj[i].true) {
             li2.appendChild(span)
-        } else if (myArray[i] == myobj[i].awr3) {
-            li3.appendChild(span)
+            li2.classList.add("correct1")
+
         }
+        else if (myArray[i] == myobj[i].awr2 &&myArray[i] != myobj[i].true) {
+            li2.appendChild(span)
+            li2.classList.add("uncorrect")
 
+        }
+        else if (myArray[i] == myobj[i].awr3 &&myArray[i] == myobj[i].true) {
+            li3.appendChild(span)
+            li3.classList.add("correct1")
 
+        }
+        else if (myArray[i] == myobj[i].awr3 &&myArray[i] != myobj[i].true) {
+            li3.appendChild(span)
+            li3.classList.add("uncorrect")
+
+        }
     };
 }
 

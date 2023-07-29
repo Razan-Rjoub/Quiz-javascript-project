@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,72 +8,50 @@
   <!-- <link rel="stylesheet" href="home.css"> -->
   <link rel="stylesheet" href="../css/index.css">
 </head>
+
 <body>
   <header>
     <nav>
       <a href="../pages/home.html" class="navbar-brand">
-            <img  src="../images/logo.png" width="70px" style="margin-left: 0px; margin-top: 10px;">
-          </a>
+        <img src="../images/logo.png" width="70px" style="margin-left: 0px; margin-top: 10px;">
+      </a>
       <ul >
-        <li><a onload="login()" onclick="tologin()"  href="#te" class="nav-link" onload="login()" id="login" onclick="tologin()"  >Login</a></li>
-        <li><a id="regestrationbtn"  onclick="toSign()" href="#so" class="nav-link" onclick="toSign()">Register</a></li>
-        
+        <li ><a onload="login()" onclick="tologin()" href="#te" class="nav-link" onload="login()" id="login"
+            onclick="tologin()" >Login</a></li>
+        <li><a id="regestrationbtn" onclick="toSign()" href="#so" class="nav-link" onclick="toSign()" >Register</a></li>
+
       </ul>
     </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="hero-content">
-        <h2 class="animated-text">Welcome to<br> 
-          
-          ALPHA-SOFT</h2>
+  <div id="box">
+    <div class="text">
+      <h1 class="welcome"></h1>
+      <p id="name"></p>
+      <h2 class="instruction">Please read before start</h2>
+      <p class="exam">
+        As a Full-Stack Web Developer, you will be
+        responsible for developing and maintaining web
+        applications and ensuring seamless integration between the front-end and back-end systems.
+      </p>
 
-          <h3 class="name"></h3>
-        <p>Building and developing computer information systems</p>
-        <!-- <div class="animated-text">Welcome to ChatGPT!</div> -->
+      <p class="exam">
+        You should attempt to Quiz which contains three parts :
+        IQ Test 25%
+        English Test 25%
+        Technical Test 50%
+      </p>
+
+      <button id="strbtn" onclick="checkin()"> Attempt Quiz</button>
+    </div>
+
+    <div id="backgroud">
+      <img class="imgbg" src="../images/Online test-rafiki.png" />
+      <footer id="footer">
+        <p>&copy; 2023 My Website. All rights reserved.</p>
+      </footer>
+
+      <script src="../JS/index.js"></script>
 </body>
-      </div>
-    </section>
 
-    <section class="features" style="background-color: #2a2f4f;" class="features1">
-      <div class="feature-item">
-        <i class="fa fa-code"></i>
-        <h3 id="h3">The brief of position</h3>
-        <p id="par">As a Full-Stack Web Developer, you will be
-          responsible for developing and maintaining web
-          applications and ensuring seamless integration<br> between the front-end and back-end systems.</p>
-      </div>
-      
-      
-      
-    </section>
-    <section class="features" style="color: #2a2f4f; ">
-        <div class="feature-item">
-          <i class="fa fa-code"></i>
-          <h3 id="h31">Requirements of Quiz</h3>
-          <p id="par1">You should attempt to Quiz which contains three parts :</p>
-          <ul id="ul">
-            <li> IQ Test 25%</li>
-            <li>English Test 25%</li>
-            <li>Technical Test 50%</li>
-          </ul>
-          <p id="par1" style="text-align: left; margin-left: 5%;">Exam time: 20 minutes</p>
-
-          <button id="bt" class="btn_Attempt_Quiz" onclick="checkin()">
-            Attempt Quiz
-          </button>
-        </div>
-        
-        
-        
-      </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2023 My Website. All rights reserved.</p>
-  </footer>
-
-  <script src="../JS/index.js"></script>
-</body>
 </html>

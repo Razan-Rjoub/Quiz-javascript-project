@@ -39,14 +39,18 @@ function login() {
         log.style.fontSize='25px'
 
     }
-
-
+    var screenWidth = window.innerWidth;
+    if (screenWidth < 480) {
+        log.style.fontSize = '15px';
+        log.style.marginLeft='-20px'
+    } 
+    else{log.style.fontSize = '25px';}
 }
 window.onload=login
-var nameid=document.getElementsByClassName('name')[0]
+const nameid = document.getElementById("name");
 function checklogged(){
     var name = localStorage.getItem('name')
-    if(name!=null){document.getElementsByClassName('name')[0].innerHTML = name;}
+    if(name!=null){nameid.innerHTML = name;}
 }
 checklogged()
 function tologin() {
